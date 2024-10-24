@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import LateralMenu from "@/components/lateralMenu";
 import Header from "@/components/header";
-import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
 	title: "NextJS | Home",
@@ -17,15 +17,15 @@ export default function RootLayout({
 	return (
 		<html lang="pt-br">
 			<body
-				className={`flex flex-col h-screen bg-[#121212] text-white`}
+				className={`flex text-gray-200`}
 			>
-				<Header />
+				<LateralMenu />
 
-				<div className="flex-1 px-12 py-4">
+				<div className="w-full flex flex-col gap-10 p-10">
+					<Header />
+
 					{children}
 				</div>
-
-				<Footer />
 			</body>
 		</html>
 	);
